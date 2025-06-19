@@ -40,9 +40,40 @@ npm install @pinata/sdk
 ```
 
 4. Configure Environment Variables
+   Go to Server/.env
+   ```shell
    PINATA_API_KEY=your_api_key_here
    PINATA_SECRET_API_KEY=your_secret_key_here
+   ```
 
 
 **✋❗️❕ Crypto Wallet is strictly necessary ❕❗️✋**
+1. Install MetaMask
+   Install the MetaMask browser extension from https://metamask.io/.
+   Create a wallet or import an existing one using your seed phrase.
 
+2. Start Your Local Blockchain
+    Use Hardhat to run a local blockchain.
+    Start your local node:
+   ```shell
+   npx hardhat node
+   ```
+   It will run on http://127.0.0.1:8545 and provide you with test accounts and private keys.
+Start a workspace. Note the RPC URL (e.g., http://127.0.0.1:7545) and accounts.
+
+3. Connect MetaMask to Local Network
+   Open MetaMask and click the network dropdown (top center).
+   Click "Add Network" → "Add a network manually".
+   Fill in the following fields:
+   ```shell
+    Network Name: Localhost 8545
+    New RPC URL: http://127.0.0.1:8545
+    Chain ID: 31337
+    Currency Symbol: ETH
+   ```
+4. Import Test Account into MetaMask 
+   MetaMask won’t automatically recognize local accounts. You must import one manually:
+   Copy a private key from the Hardhat/Ganache terminal.
+   In MetaMask, click the account icon → Import Account.
+   Paste the private key and click Import.
+   Now your MetaMask is connected to your local test network and funded with test ETH!
